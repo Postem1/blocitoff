@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
+gem 'figaro', '1.0'
+
 
 
 # Use ActiveModel has_secure_password
