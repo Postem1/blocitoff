@@ -2,6 +2,8 @@
 
 <h2>My email address is: <%= @user.email %></h2>
 
+<h3>Below are my to-do items:</h3>
+
 <% @user.items.each do |item| %>
   <%= render partial: 'items/item', locals: { item: item } %>
 <% end %>
