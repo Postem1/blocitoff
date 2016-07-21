@@ -44,6 +44,8 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
   gem 'shoulda'
+  gem 'faker'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
  group :production do
