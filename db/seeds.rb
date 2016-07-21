@@ -9,20 +9,25 @@ require 'faker'
 
 # Create Users
 5.times do
-  User.create!(
-  email:
-  password:
+  user = User.new(
+        email:  Faker::Internet.email,
+        password: 'password'
   )
+  user.skip_confirmation!
+  user.save!
 end
 users = User.all
 
 #Create items
 25.times do
   Item.create!(
-  user: users.sample
-  name:
+  user: users.sample,
+  name: Faker::Lorem.sentence
   )
 end
+items = Item.all
+
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "#{Item.count} items created"
