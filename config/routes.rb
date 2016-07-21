@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
+  authenticated :user do
+    root to: 'users#show', as: :authenticated_root
+  end
+
   root 'welcome#index'
 
   get 'about' => 'welcome#about'
