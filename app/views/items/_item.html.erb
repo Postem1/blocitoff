@@ -1,5 +1,8 @@
 <div id=<%="item-#{item.id}"%>
   <h5><%= item.name %> |
-    <%= link_to "", user_item_path(@user, item), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+    <%= link_to "Click to complete task", user_item_path(@user, item), method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
   </h5>
+  <p>
+    <%= distance_of_time_in_words(7.days.ago, item.created_at) %> left to complete task
+  </p>
 </div>
