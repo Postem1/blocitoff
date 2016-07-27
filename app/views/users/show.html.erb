@@ -4,9 +4,9 @@
 
 <h3>Below are my to-do items:</h3>
 
-<% @user.items.each do |item| %>
-  <%= render partial: 'items/item', locals: { item: item } %>
-<% end %>
+  <div id="items-list">
+    <%= render @user.items %>
+  </div>
 
 <% if current_user %>
   <%= render 'items/form', item: Item.new, user: @user %>
