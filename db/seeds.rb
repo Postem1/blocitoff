@@ -8,7 +8,7 @@
 require 'faker'
 
 # Create Users
-5.times do
+3.times do
   user = User.new(
         email:  Faker::Internet.email,
         password: 'password'
@@ -19,11 +19,13 @@ end
 users = User.all
 
 #Create items
-25.times do
-  Item.create!(
-  user: users.sample,
-  name: Faker::Lorem.sentence
+75.times do
+  item = Item.create!(
+        user: users.sample,
+        name: Faker::Lorem.sentence
   )
+  item.update_attribute(:created_at, rand(3.days .. 14.days).ago)
+
 end
 items = Item.all
 
