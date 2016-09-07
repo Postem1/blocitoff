@@ -8,7 +8,7 @@
 require 'faker'
 
 # Create Users
-3.times do
+6.times do
   user = User.new(
         email:  Faker::Internet.email,
         password: 'password'
@@ -17,6 +17,13 @@ require 'faker'
   user.save!
 end
 users = User.all
+
+admin = User.new(
+      email:  'admin@example.com',
+      password: 'password'
+)
+admin.skip_confirmation!
+admin.save!
 
 #Create items
 75.times do

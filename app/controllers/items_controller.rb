@@ -3,16 +3,14 @@ class ItemsController < ApplicationController
     @user = current_user
     @item = @user.items.new(item_params)
 
-    if @item.save
-      redirect_to current_user
-    end
+    redirect_to current_user if @item.save
   end
 
   def destroy
     @user = current_user
     @item = @user.items.find(params[:id])
 
-    if @item.destroy
+    if @item.destroy # rubocop:disable Style/GuardClause
       respond_to do |format|
         format.html
         format.js
@@ -21,6 +19,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:name)
   end

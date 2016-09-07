@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use SCSS for stylesheets
@@ -26,8 +25,6 @@ gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem 'figaro', '1.0'
 
-
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -47,10 +44,10 @@ group :development, :test do
   gem 'sqlite3'
 end
 
- group :production do
-   gem 'pg'
-   gem 'rails_12factor'
- end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
