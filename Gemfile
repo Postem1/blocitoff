@@ -24,6 +24,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem 'figaro', '1.0'
+gem 'whenever', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,6 +43,7 @@ group :development, :test do
   gem 'faker'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sqlite3'
+  gem 'pundit'
 end
 
 group :production do
